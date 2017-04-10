@@ -1,4 +1,4 @@
-const https = require('https')
+const https = require('https');
 
 
 function getAndPrintHTML () {
@@ -7,19 +7,19 @@ function getAndPrintHTML () {
     host: 'sytantris.github.io',
     path: '/http-examples/step2.html'
   };
-  space = ''
-    https.get(requestOptions, (response) => {
-        response.setEncoding('utf8')
-        response.on('data', (data) => {
-        for (i in data) {
-            space += data[i]
-        }
-     })
+  space = '';
+  https.get(requestOptions, (response) => {
+    response.setEncoding('utf8');
+    response.on('data', (data) => {
+      for (i in data) {
+        space += data[i];
+      }
+    });
 
-     response.on('end', () => {
-       console.log('Response Stream Complete.', space)
-    })
-  })
+    response.on('end', () => {
+      console.log('Response Stream Complete.', space);
+    });
+  });
 }
 
-getAndPrintHTML()
+getAndPrintHTML();

@@ -1,4 +1,4 @@
-const https = require('https')
+const https = require('https');
 
 
 function getAndPrintHTMLChunks () {
@@ -9,16 +9,16 @@ function getAndPrintHTMLChunks () {
   };
 
   https.get(requestOptions, (response) => {
-      response.setEncoding('utf8')
-      response.on('data', (data) => {
-          console.log('Chunk Received. Length:', data.length)
-      })
+    response.setEncoding('utf8');
+    response.on('data', (data) => {
+      console.log('Chunk Received. Length:', data.length);
+    });
 
-      response.on('end', () => {
-          console.log('Response Stream Complete.')
-      })
-  })
+    response.on('end', () => {
+      console.log('Response Stream Complete.');
+    });
+  });
 
 }
 
-getAndPrintHTMLChunks()
+getAndPrintHTMLChunks();
