@@ -7,16 +7,17 @@ function getAndPrintHTML () {
     host: 'sytantris.github.io',
     path: '/http-examples/step2.html'
   };
+  space = ''
     https.get(requestOptions, (response) => {
         response.setEncoding('utf8')
         response.on('data', (data) => {
         for (i in data) {
-            console.log(data)
+            space += data[i]
         }
      })
 
      response.on('end', () => {
-       console.log('Response Stream Complete.')
+       console.log('Response Stream Complete.', space)
     })
   })
 }
